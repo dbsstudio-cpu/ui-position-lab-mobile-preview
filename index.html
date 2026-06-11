@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <title>UI Position Lab | Mobile Preview</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090c12;
+      --panel: #141925;
+      --line: #2b3447;
+      --text: #f3f6ff;
+      --muted: #aab4ca;
+      --accent: #84a9ff;
+      --ok: #72d6aa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100svh;
+      padding: max(28px, env(safe-area-inset-top)) 18px max(28px, env(safe-area-inset-bottom));
+      background: radial-gradient(circle at top, #182038 0, var(--bg) 42%);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { width: min(720px, 100%); margin: 0 auto; }
+    .eyebrow { color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 8px 0 10px; font-size: clamp(30px, 9vw, 54px); line-height: 1.05; }
+    .lead { margin: 0 0 24px; color: var(--muted); }
+    .card { margin-top: 14px; padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: color-mix(in srgb, var(--panel) 92%, transparent); }
+    .status { display: inline-flex; gap: 8px; align-items: center; color: var(--ok); font-weight: 700; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: currentColor; box-shadow: 0 0 16px currentColor; }
+    h2 { margin: 8px 0 5px; font-size: 20px; }
+    p { margin: 6px 0; }
+    a.button { display: block; margin-top: 16px; padding: 13px 16px; border-radius: 12px; background: var(--accent); color: #07101f; font-weight: 800; text-align: center; text-decoration: none; }
+    ul { margin: 10px 0 0; padding-left: 20px; color: var(--muted); }
+    footer { margin-top: 24px; color: var(--muted); font-size: 13px; text-align: center; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">DBS Studio Internal Preview</div>
+    <h1>UI Position Lab</h1>
+    <p class="lead">手機版 UI 預覽與驗收入口。此網站只呈現靜態畫面，不連接 Future Capsule 正式資料。</p>
+
+    <section class="card">
+      <div class="status"><span class="dot"></span>部署通道已就緒</div>
+      <h2>最新預覽</h2>
+      <p>UI Position Lab v1 尚在規格階段。目前入口為等待頁，待第一份審核通過的靜態結果上版後即可由手機查看。</p>
+      <a class="button" href="previews/latest/">開啟最新預覽</a>
+    </section>
+
+    <section class="card">
+      <h2>測試邊界</h2>
+      <ul>
+        <li>只檢查位置、重疊、截斷、間距與 Bottom Navigation。</li>
+        <li>不測功能、推播、金流、登入、資料庫或 PWA 安裝。</li>
+        <li>本地 WebKit 結果是近似預覽，最終仍需 iPhone 真機確認。</li>
+      </ul>
+    </section>
+
+    <footer>UI Position Lab Mobile Preview · 2026-06-11</footer>
+  </main>
+</body>
+</html>
